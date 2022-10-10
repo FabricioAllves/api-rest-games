@@ -1,33 +1,34 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+var ModelGame = require('./ModelConnection')
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 
-var DB = {
-    games: [
-        {
-            id: 23,
-            title: "Call of Duty MW",
-            year: 2019,
-            price: 60
-        },
-        {
-            id: 65,
-            title: "GTA",
-            year: 2012,
-            price: 90
-        },
-        {
-            id: 91,
-            title: "Fifa",
-            year: 2022,
-            price: 120
-        }
-    ]
-}
+// var DB = {
+//     games: [
+//         {
+//             id: 23,
+//             title: "Call of Duty MW",
+//             year: 2019,
+//             price: 60
+//         },
+//         {
+//             id: 65,
+//             title: "GTA",
+//             year: 2012,
+//             price: 90
+//         },
+//         {
+//             id: 91,
+//             title: "Fifa",
+//             year: 2022,
+//             price: 120
+//         }
+//     ]
+// }
 
 app.get("/games", (req, res) => {
     res.statusCode = 200;
@@ -54,20 +55,63 @@ app.get("/game/:id", (req, res) => {
     }
 })
 
-app.post("/game", (req, res) => {
 
-    var {title, price, year} = req.body
 
-    DB.games.push({
-        id: 2323,
-        title,
-        price,
-        year
-    });
 
-    res.sendStatus(200)
 
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+app.post('/game', (req, res) => {
+    var title = req.body.title;
+    var year = req.body.year;
+    var price = req.body.price;
+    ModelGame.create({
+        title: title,
+        year: year,
+        price: price
+    }).then(() => {
+        res.send("ok")
+    })
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+// app.post("/game", (req, res) => {
+
+//     var {title, price, year} = req.body
+
+//     DB.games.push({
+//         id: 2323,
+//         title,
+//         price,
+//         year
+//     });
+
+//     res.sendStatus(200)
+
+// })
 
 app.delete("/game/:id", (req, res) => {
 

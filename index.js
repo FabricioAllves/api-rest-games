@@ -3,34 +3,34 @@ const app = express();
 const bodyParser = require('body-parser');
 var ModelGame = require('./ModelConnection')
 
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
 app.get("/games", (req, res) => {
-    
+
     ModelGame.findAll().then(resp => {
         res.statusCode = 200;
-        res.json({games:resp})
+        res.json({ games: resp })
     })
-    
+
 })
 
 app.get("/game/:id", (req, res) => {
 
-    if(isNaN(req.params.id)){
+    if (isNaN(req.params.id)) {
         res.sendStatus(400);
-    }else{
-        
+    } else {
+
         var id = parseInt(req.params.id);
 
         ModelGame.findOne({
-            where: {id: id}
-        }).then(id => {
-            if(id != undefined && id != null){
+            where: { id: id }
+        }).then(game => {
+            if (game != undefined && game != null) {
                 res.statusCode = 200;
-                res.json(id)
-            }else{
+                res.json(game)
+            } else {
                 res.sendStatus(404)
             }
         })
@@ -39,7 +39,7 @@ app.get("/game/:id", (req, res) => {
 })
 
 app.post('/game', (req, res) => {
-    var {title, year, price} = req.body
+    var { title, year, price } = req.body
 
     ModelGame.create({
         title: title,
@@ -53,19 +53,19 @@ app.post('/game', (req, res) => {
 
 app.delete("/game/:id", (req, res) => {
 
-    if(isNaN(req.params.id)){
+    if (isNaN(req.params.id)) {
         res.sendStatus(400);
-    }else{
-        
-        let {id} = req.params
+    } else {
+
+        let { id } = req.params
 
         ModelGame.findOne({
-            where: {id: id}
+            where: { id: id }
         }).then((game) => {
-            if(game == null){
+            if (game == null) {
                 res.sendStatus(404)
-            }else{
-                ModelGame.destroy({where: { id: id}})
+            } else {
+                ModelGame.destroy({ where: { id: id } })
                 res.sendStatus(200)
             }
         })
@@ -110,7 +110,6 @@ app.put("/game/:id", (req, res) => {
     }
 })
 
-
-app.listen(2222,() => {
+app.listen(2222, () => {
     console.log("API RODANDO!")
 })

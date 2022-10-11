@@ -9,7 +9,7 @@ const Jogos = connection.define('jogos', {
         type: Sequelize.NUMBER,
         allowNull: false
     },price: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
         allowNull: false
     }
 });

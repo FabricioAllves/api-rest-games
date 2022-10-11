@@ -6,7 +6,7 @@ const Jogos = connection.define('jogos', {
         type: Sequelize.STRING,
         allowNull: false
     },year:{
-        type: Sequelize.INTEGER,
+        type: Sequelize.NUMBER,
         allowNull: false
     },price: {
         type: Sequelize.INTEGER,

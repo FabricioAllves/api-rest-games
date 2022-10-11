@@ -7,111 +7,49 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 
-// var DB = {
-//     games: [
-//         {
-//             id: 23,
-//             title: "Call of Duty MW",
-//             year: 2019,
-//             price: 60
-//         },
-//         {
-//             id: 65,
-//             title: "GTA",
-//             year: 2012,
-//             price: 90
-//         },
-//         {
-//             id: 91,
-//             title: "Fifa",
-//             year: 2022,
-//             price: 120
-//         }
-//     ]
-// }
-
 app.get("/games", (req, res) => {
-    res.statusCode = 200;
-    res.json(DB.games)
+    
+    ModelGame.findAll().then(resp => {
+        res.statusCode = 200;
+        res.json({games:resp})
+    })
+    
 })
 
 app.get("/game/:id", (req, res) => {
 
     if(isNaN(req.params.id)){
         res.sendStatus(400);
-        res.send("Isso nao é um numero")
     }else{
         
         var id = parseInt(req.params.id);
 
-        var game = DB.games.find(g => g.id == id);
+        ModelGame.findOne({
+            where: {id: id}
+        }).then(id => {
+            if(id != undefined && id != null){
+                res.statusCode = 200;
+                res.json(id)
+            }else{
+                res.sendStatus(404)
+            }
+        })
 
-        if(game != undefined){
-            res.statusCode = 200;
-            res.json(game)
-        }else{
-            res.sendStatus(404)
-        }
     }
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 app.post('/game', (req, res) => {
-    var title = req.body.title;
-    var year = req.body.year;
-    var price = req.body.price;
+    var {title, year, price} = req.body
+
     ModelGame.create({
         title: title,
         year: year,
         price: price
     }).then(() => {
+        statusCode = 200
         res.send("ok")
     })
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-// app.post("/game", (req, res) => {
-
-//     var {title, price, year} = req.body
-
-//     DB.games.push({
-//         id: 2323,
-//         title,
-//         price,
-//         year
-//     });
-
-//     res.sendStatus(200)
-
-// })
 
 app.delete("/game/:id", (req, res) => {
 
@@ -119,16 +57,18 @@ app.delete("/game/:id", (req, res) => {
         res.sendStatus(400);
     }else{
         
-        var id = parseInt(req.params.id);
-        var index = DB.games.findIndex(g => g.id == id);
+        let {id} = req.params
 
-        if(index == -1){
-            res.sendStatus(404)
-        }else{
-            DB.games.splice(index, 1);
-            res.sendStatus(200)
-        }
-
+        ModelGame.findOne({
+            where: {id: id}
+        }).then((game) => {
+            if(game == null){
+                res.sendStatus(404)
+            }else{
+                ModelGame.destroy({where: { id: id}})
+                res.sendStatus(200)
+            }
+        })
     }
 })
 
@@ -136,41 +76,39 @@ app.put("/game/:id", (req, res) => {
 
     if(isNaN(req.params.id)){
         res.sendStatus(400);
-        res.send("Isso nao é um numero")
     }else{
-        
-        var id = parseInt(req.params.id);
 
-        var game = DB.games.find(g => g.id == id);
+        let {id} = req.params
 
-        if(game != undefined){
-          
+        ModelGame.findOne({
+            where: {id:id}
+        }).then((game) => {
+            if(game == null){
+                res.statusCode(404)
+            }else{
 
-            var {title, price, year} = req.body
+                var {title, price, year} = req.body
 
-            if(title != undefined){
-                game.title = title;
+                if(title != undefined){
+                    ModelGame.update({title: title}, {where: {id: id}})
+                }
+    
+                if(price != undefined){
+                    ModelGame.update({year: year}, {where: {id: id}})
+                }
+    
+                if(year != undefined){
+                    ModelGame.update({price: price}, {where: {id: id}})
+                }
+                res.sendStatus(200)
+
             }
-
-            if(price != undefined){
-                game.price = price;
-            }
-
-            if(year != undefined){
-                game.year = year;
-            }
-
-            res.sendStatus(200)
-
-
-
-        }else{
-            res.sendStatus(404)
-        }
+        }).catch(err => {
+            console.log(err)
+            res.sendStatus(500)
+        })
     }
 })
-
-
 
 
 app.listen(2222,() => {

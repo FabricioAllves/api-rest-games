@@ -2,19 +2,25 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 var ModelGame = require('./ModelConnection')
+const connection = require("./database")
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
+connection.authenticate().then(() => {
+    console.log("Banco conectado com sucesso!!")
+}).catch((err) => {
+    console.error("Banco não conectado!")
+})
+
 app.get("/games", (req, res) => {
 
     ModelGame.findAll().then(resp => {
         res.statusCode = 200;
-        res.json({ games: resp })
-    })
-
-})
+        res.json({ games: resp });
+    });
+});
 
 app.get("/game/:id", (req, res) => {
 
@@ -32,10 +38,9 @@ app.get("/game/:id", (req, res) => {
                 res.json(game)
             } else {
                 res.sendStatus(404)
-            }
-        })
-
-    }
+            };
+        });
+    };
 })
 
 app.post('/game', (req, res) => {
@@ -47,8 +52,8 @@ app.post('/game', (req, res) => {
         price: price
     }).then(() => {
         statusCode = 200
-        res.send("ok")
-    })
+        res.send("ok");
+    });
 });
 
 app.delete("/game/:id", (req, res) => {
@@ -67,10 +72,10 @@ app.delete("/game/:id", (req, res) => {
             } else {
                 ModelGame.destroy({ where: { id: id } })
                 res.sendStatus(200)
-            }
-        })
-    }
-})
+            };
+        });
+    };
+});
 
 app.put("/game/:id", (req, res) => {
 
@@ -102,14 +107,14 @@ app.put("/game/:id", (req, res) => {
                 }
                 res.sendStatus(200)
 
-            }
+            };
         }).catch(err => {
             console.log(err)
             res.sendStatus(500)
-        })
-    }
-})
+        });
+    };
+});
 
 app.listen(2222, () => {
     console.log("API RODANDO!")
-})
+});

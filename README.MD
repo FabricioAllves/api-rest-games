@@ -59,7 +59,7 @@ npm install
 ```
 Executar serviço API:
 ```
-node index.js
+node api/index.js
 ```
 Se tudo ocorreu bem, após ter configurado corretamente o banco de dados, após executar o comando acima, deverá obter a seguinte mensagem no terminal:
 ```

@@ -48,7 +48,7 @@ Criação aas váriaveis de ambiente que são necessárias neste projeto para ac
 | DATABASE.JS        | DATABASE_USERNAME | Usuario de acesso ao banco de dados                    |
 | DATABASE.JS        | DATABASE_PASSWORD | Senha de acesso ao banco de dados                      |
 
-<img src="https://github.com/fabricio-26/Caixa-Modal-Login-BTN-Darkmode/blob/master/css/img/img1.png">
+<img src="https://github.com/fabricio-26/api-rest-games/blob/main/api/others/img.jpeg">
 
 
 ### Instalando
@@ -71,29 +71,8 @@ _Endpoint_
 
 `<url>/orders`
 
-Método: *GET*
+Em desenvlolvimento!
 
-Body:
-```json
-{
-  "startDate": "2015-12-30",
-  "endDate": "2016-12-30"
-}
-```
-Retorno esperado:
-```json
-{
-  "success": true,
-  "data": {
-    "result": {
-      "count": 3887,
-      "revenue": 411890.04,
-      "quantity": 7198,
-      "averageRetailPrice": 57.22,
-      "averageOrderValue": 105.97
-    }
-  }
-}
 ```
 
 ## ⛏️ Built Using <a name = "built_using"></a>

@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-var ModelGame = require('./ModelConnection')
+const ModelGame = require('./ModelConnection')
 const connection = require("./database")
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -16,9 +16,9 @@ connection.authenticate().then(() => {
 
 app.get("/games", (req, res) => {
 
-    ModelGame.findAll().then(resp => {
+    ModelGame.findAll().then(games => {
         res.statusCode = 200;
-        res.json({ games: resp });
+        res.json(games);
     });
 });
 

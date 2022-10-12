@@ -1,5 +1,5 @@
 
-<h3 align="center">API - Orders</h3>
+<h3 align="center">API - GamesList</h3>
 
 <div align="center">
 

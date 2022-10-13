@@ -108,6 +108,40 @@ Esta resposta é retornada se a solicitação não for válida.
 Esta resposta é retornada se algo ruim aconteceu no servidor ou se a rota colocada no campo url não existe.
 <hr>
 
+#### */games/:id*
+Esta rota é usada para retornar um jogo específico, que tem o id recebido como parâmetro, como *id*.
+
+##### - Parameters
+###### *id* 
+Nesta rota o usuário deve passar o **id** do jogo para retornar suas informações.
+
+##### - Retornos
+###### Bad Request 400 ```Bad Request```
+Se o parâmetro *id* não for um número, será retornado `` Bad request 400 ``
+###### internal Server Error 500 ```internal Server Error```
+Se esta resposta for retornada é porque algo ruim aconteceu no servidor;
+###### Not found 404 ```Not found```
+Se a resposta for `` Not found 404 ``, é porque a API recebeu e aceitou o parâmetro,
+mas foi encontrado algum jogo com o parâmetro como *id*
+###### OK 200 ```OK``
+Se for retornado *OK*, é porque os parâmetros foram aceitos, e os jogos foram encontrados e devolvidos com sucesso.
+ Assim o games, que tem o parâmetro id como id, as informações serão retornadas.
+Exempplo:
+```
+{
+    "id": 2,
+    "title": "FIFA 21",
+    "year": 2020,
+    "price": 299,
+    "company": "EA Sports",
+    "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTDpd3gmkaL7iaRUtRGCJLjNChKQPTKNqESbQ&usqp=CAUg",
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit...",
+    "officialWebsiteLink": "https://www.ea.com/pt-br/games/fifa/fifa-21",
+    "createdAt": "2020-10-30T17:48:17.000Z",
+    "updatedAt": "2020-10-30T17:48:17.000Z"
+  }
+```
+
 
 
 

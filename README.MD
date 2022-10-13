@@ -140,7 +140,29 @@ Exempplo:
 
 ### POST  Routes 
 #### */games*
+
+##### - Parâmetros
+*Os parâmetros de rotas devem ser passados ​​como **parâmetros do corpo**. E qualquer um pode ser nulo ou indefinido.*
+###### title
+Este será o título dos jogos;
+###### price
+Este será o preço do jogo. *Este valor pode ser **0***
+###### year
+Este será o ano em que o jogo foi criado.
+
+##### - Retornos
+
+###### Created 201 ```Created```
+Esta resposta será retornada se o jogo foi criado com sucesso.
+###### Bad request 400 ```Bad request```
+Esta resposta será retornada se os parâmetros recebidos forem inválidos.
+###### Internal Server Error 500 ```Internal Server Error```
+Esta resposta será retornada se algo de ruim acontecer no servidor.
+
+### DELETE  Routes 
+#### */games/:id*
 ...
+
 
 
 

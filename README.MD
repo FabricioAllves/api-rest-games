@@ -66,10 +66,59 @@ Se tudo ocorreu bem, após ter configurado corretamente o banco de dados, após 
 Server started on port 2222! 🏆 GET http://localhost:2222
 ```
 Indicando que o servidor está rodando em localhost na porta 2222
-## 🎈 Como usar <a name="usage"></a>
+## 🎈 Games EndPoints <a name="usage"></a>
 _Endpoint_
 
-`<url>/orders`
+### GET Rountes
+
+#### */games/*
+Este _EndPoint_ retorna uma lista com todas as informações sobre todos os jogos registrados no banco de dados.
+
+##### - Parameters
+Esta rota não tem nenhum parâmetro.
+
+##### - Retorno
+###### OK 200 ```OK```
+Se for retornado **OK**, é porque está tudo ok, e todos os jogos foram retornados.
+Exemplo:
+```
+[
+  {
+    "id": 1,
+			"title": "FIFA 2022",
+			"year": 2022,
+			"price": 199,
+			"createdAt": "2022-10-13T12:12:35.000Z",
+			"updatedAt": "2022-10-13T12:12:35.000Z"
+  },
+  {
+    "id": 2,
+			"title": "CS: GO",
+			"year": 2010,
+			"price": 59,
+			"createdAt": "2022-10-13T12:14:11.000Z",
+			"updatedAt": "2022-10-13T12:14:11.000Z"
+  }
+]
+```
+###### Bad Request 400 ```Bad Request```
+Esta resposta é retornada se a solicitação não for válida.
+
+###### Internal server error 500 ```Internal server error```
+Esta resposta é retornada se algo ruim aconteceu no servidor ou se a rota colocada no campo url não existe.
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
 
 Em desenvlolvimento!
 

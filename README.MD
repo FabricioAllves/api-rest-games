@@ -39,7 +39,7 @@ Banco de dados MySQL
 
 Node.js e NPM instalado na maquina que irá rodar o projeto.
 
-Criação aas váriaveis de ambiente que são necessárias neste projeto para acesso e manipulação do banco.
+Criação das váriaveis de ambiente que são necessárias neste projeto para acesso e manipulação do banco.
 
 
 | Arquivo            | Variável          | Descrição                                              |
@@ -59,7 +59,7 @@ npm install
 ```
 Executar serviço API:
 ```
-node api/index.js
+node index.js
 ```
 Se tudo ocorreu bem, após ter configurado corretamente o banco de dados, após executar o comando acima, deverá obter a seguinte mensagem no terminal:
 ```

@@ -129,18 +129,18 @@ Se for retornado *OK*, é porque os parâmetros foram aceitos, e os jogos foram 
 Exempplo:
 ```
 {
-    "id": 2,
-    "title": "FIFA 21",
-    "year": 2020,
-    "price": 299,
-    "company": "EA Sports",
-    "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTDpd3gmkaL7iaRUtRGCJLjNChKQPTKNqESbQ&usqp=CAUg",
-    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit...",
-    "officialWebsiteLink": "https://www.ea.com/pt-br/games/fifa/fifa-21",
-    "createdAt": "2020-10-30T17:48:17.000Z",
-    "updatedAt": "2020-10-30T17:48:17.000Z"
+  "i"id": 2,
+	"title": "CS: GO",
+	"year": 2010,
+	"price": 59,
+	"createdAt": "2022-10-13T12:14:11.000Z",
+	"updatedAt": "2022-10-13T12:14:11.000Z"
   }
 ```
+
+### POST  Routes 
+#### */games*
+...
 
 
 

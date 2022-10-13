@@ -85,19 +85,19 @@ Exemplo:
 [
   {
     "id": 1,
-			"title": "FIFA 2022",
-			"year": 2022,
-			"price": 199,
-			"createdAt": "2022-10-13T12:12:35.000Z",
-			"updatedAt": "2022-10-13T12:12:35.000Z"
+    "title": "FIFA 2022",
+    "year": 2022,
+    "price": 199,
+    "createdAt": "2022-10-13T12:12:35.000Z",
+    "updatedAt": "2022-10-13T12:12:35.000Z"
   },
   {
     "id": 2,
-			"title": "CS: GO",
-			"year": 2010,
-			"price": 59,
-			"createdAt": "2022-10-13T12:14:11.000Z",
-			"updatedAt": "2022-10-13T12:14:11.000Z"
+    "title": "CS: GO",
+    "year": 2010,
+    "price": 59,
+    "createdAt": "2022-10-13T12:14:11.000Z",
+    "updatedAt": "2022-10-13T12:14:11.000Z"
   }
 ]
 ```

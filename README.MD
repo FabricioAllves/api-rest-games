@@ -202,8 +202,8 @@ Este será o novo ano em que o jogo foi criado.
 Esta resposta será retornada se o jogo foi atualizado com sucesso.
 ###### Bad request 400 ```Bad request ```
 Esta resposta será retornada se os parâmetros recebidos forem inválidos.
-###### Internal Server Error 500 ```Internal Server Error ```
-Esta resposta será retornada se algo de ruim acontecer no servidor.
+<!-- ###### Internal Server Error 500 ```Internal Server Error ```
+Esta resposta será retornada se algo de ruim acontecer no servidor. -->
 ###### Not found 404 ```Not found ```
 Se a resposta retornada for Bad Request, é porque a API recebeu e aceitou o parâmetro, mas não foi encontrado algum jogo com o parâmetro *id*.
 

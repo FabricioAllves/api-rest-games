@@ -69,6 +69,8 @@ Indicando que o servidor está rodando em localhost na porta 2222
 ## 🎈 Games EndPoints <a name="usage"></a>
 _Endpoint_
 
+<hr>
+
 ### GET Rountes
 
 #### */games/*
@@ -106,6 +108,7 @@ Esta resposta é retornada se a solicitação não for válida.
 
 ###### Internal server error 500 ```Internal server error```
 Esta resposta é retornada se algo ruim aconteceu no servidor ou se a rota colocada no campo url não existe.
+
 <hr>
 
 #### */games/:id*
@@ -137,6 +140,7 @@ Exempplo:
 	"updatedAt": "2022-10-13T12:14:11.000Z"
   }
 ```
+<hr>
 
 ### POST  Routes 
 #### */games*
@@ -159,6 +163,8 @@ Esta resposta será retornada se os parâmetros recebidos forem inválidos.
 ###### Internal Server Error 500 ```Internal Server Error```
 Esta resposta será retornada se algo de ruim acontecer no servidor.
 
+<hr>
+
 ### DELETE  Routes 
 #### */games/:id*
 
@@ -176,6 +182,8 @@ mas foi encontrado algum jogo com o parâmetro como *id*
 Esta resposta será retornada se os parâmetros recebidos forem inválidos.
 ###### Internal Server Error 500 ```Internal Server Error ```
 Esta resposta será retornada se algo de ruim acontecer no servidor.
+
+<hr>
 
 ### PUT  Routes 
 #### */games/:id*
@@ -200,7 +208,7 @@ Esta resposta será retornada se algo de ruim acontecer no servidor.
 Se a resposta retornada for Bad Request, é porque a API recebeu e aceitou o parâmetro, e os novos dados do jogo
 mas foi encontrado algum jogo com o parâmetro *id*.
 
-
+<hr>
 
 
 ## ⛏️ Built Using <a name = "built_using"></a>

@@ -161,22 +161,45 @@ Esta resposta será retornada se algo de ruim acontecer no servidor.
 
 ### DELETE  Routes 
 #### */games/:id*
-...
 
+##### - Parameters
+###### id
+Esta rota receberá um parâmetro, chamado `id`, que será usado para encontrar o jogo que será deletado.
 
+##### - Answers
+###### OK 200 ```OK  ```
+Se for retornado *OK*, é porque os parâmetros foram aceitos, os jogos foram encontrados e deletados com sucesso.
+###### Not found 404 ```Not found ```
+Se a resposta retornada for Bad Request, é porque a API recebeu e aceitou o parâmetro,
+mas foi encontrado algum jogo com o parâmetro como *id*
+###### Bad request 400 ``` Bad request ```
+Esta resposta será retornada se os parâmetros recebidos forem inválidos.
+###### Internal Server Error 500 ```Internal Server Error ```
+Esta resposta será retornada se algo de ruim acontecer no servidor.
 
+### PUT  Routes 
+#### */games/:id*
 
+##### - Parameters
+*O ID do jogo precisa ser passado como parâmetro, mas as informações do jogo devem ser passadas como **parâmetros do corpo**. E qualquer um pode ser nulo ou indefinido.*
+###### title
+Este será o novo título do jogo.
+###### price
+Este será o novo preço do jogo. *Este valor pode ser **0***
+###### year
+Este será o novo ano em que o jogo foi criado.
 
+##### - Answers
+###### Created 200 ```OK```
+Esta resposta será retornada se o jogo foi atualizado com sucesso.
+###### Bad request 400 ```Bad request ```
+Esta resposta será retornada se os parâmetros recebidos forem inválidos.
+###### Internal Server Error 500 ```Internal Server Error ```
+Esta resposta será retornada se algo de ruim acontecer no servidor.
+###### Not found 404 ```Not found ```
+Se a resposta retornada for Bad Request, é porque a API recebeu e aceitou o parâmetro, e os novos dados do jogo
+mas foi encontrado algum jogo com o parâmetro *id*.
 
-
-
-
-
-
-
-
-
-Em desenvlolvimento!
 
 ```
 

@@ -106,8 +106,8 @@ Exemplo:
 ###### Bad Request 400 ```Bad Request```
 Esta resposta é retornada se a solicitação não for válida.
 
-###### Internal server error 500 ```Internal server error```
-Esta resposta é retornada se algo ruim aconteceu no servidor ou se a rota colocada no campo url não existe.
+<!-- ###### Internal server error 500 ```Internal server error```
+Esta resposta é retornada se algo ruim aconteceu no servidor ou se a rota colocada no campo url não existe. -->
 
 <hr>
 
@@ -160,8 +160,8 @@ Este será o ano em que o jogo foi criado.
 Esta resposta será retornada se o jogo foi criado com sucesso.
 ###### Bad request 400 ```Bad request```
 Esta resposta será retornada se os parâmetros recebidos forem inválidos.
-###### Internal Server Error 500 ```Internal Server Error```
-Esta resposta será retornada se algo de ruim acontecer no servidor.
+<!-- ###### Internal Server Error 500 ```Internal Server Error```
+Esta resposta será retornada se algo de ruim acontecer no servidor. -->
 
 <hr>
 
@@ -180,8 +180,8 @@ Se a resposta retornada for Bad Request, é porque a API recebeu e aceitou o par
 mas foi encontrado algum jogo com o parâmetro como *id*
 ###### Bad request 400 ``` Bad request ```
 Esta resposta será retornada se os parâmetros recebidos forem inválidos.
-###### Internal Server Error 500 ```Internal Server Error ```
-Esta resposta será retornada se algo de ruim acontecer no servidor.
+<!-- ###### Internal Server Error 500 ```Internal Server Error ```
+Esta resposta será retornada se algo de ruim acontecer no servidor. -->
 
 <hr>
 

@@ -201,7 +201,7 @@ Se a resposta retornada for Bad Request, é porque a API recebeu e aceitou o par
 mas foi encontrado algum jogo com o parâmetro *id*.
 
 
-```
+
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 

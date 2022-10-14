@@ -205,8 +205,7 @@ Esta resposta será retornada se os parâmetros recebidos forem inválidos.
 ###### Internal Server Error 500 ```Internal Server Error ```
 Esta resposta será retornada se algo de ruim acontecer no servidor.
 ###### Not found 404 ```Not found ```
-Se a resposta retornada for Bad Request, é porque a API recebeu e aceitou o parâmetro, e os novos dados do jogo
-mas foi encontrado algum jogo com o parâmetro *id*.
+Se a resposta retornada for Bad Request, é porque a API recebeu e aceitou o parâmetro, mas não foi encontrado algum jogo com o parâmetro *id*.
 
 <hr>
 
